@@ -1,20 +1,20 @@
-###Note: Please Read `analyze-fonctionnelle.md` before read this document
+### Note: Please Read `analyze-fonctionnelle.md` before read this document
 
-#Methodologies:
-##WBS
+# Methodologies:
+## WBS
 
 ![alt text](pictures/methodologies/wbs.png)
 
-##Class Digramme
+## Class Digramme
 
 ![alt text](pictures/methodologies/class-diagram.png)
 
-##Use case
+## Use case
 
 ![alt text](pictures/methodologies/use-case-diagram.png)
 
-#Technique
-##Keycloak : Pour obtenir l'authentification, nous devons utiliser keycloak. 
+# Technique
+## Keycloak : Pour obtenir l'authentification, nous devons utiliser keycloak. 
 Keycloak est un produit logiciel open source permettant une connexion unique avec Identity and Access Management destiné aux applications et services modernes.
 La première version de production de Keycloak remonte à septembre 2014, le développement ayant commencé environ un an plus tôt. 
 En 2016, Red Hat est passé du produit RH SSO basé sur le framework PicketLink à celui du projet amont Keycloak.
@@ -29,7 +29,7 @@ Keycloak fournit des interfaces utilisateur personnalisable pour la connexion, l
  Vous pouvez également utiliser Keycloak comme plate-forme d'intégration pour le connecter aux serveurs LDAP et Active Directory existants. 
 Vous pouvez également déléguer l'authentification à des fournisseurs d'identité tiers tels que Facebook et Google+.
 
-####les traits :
+#### les traits :
 Parmi les nombreuses fonctionnalités de Keycloak, citons :
 1. User Registration
 2. Social login
@@ -39,12 +39,12 @@ Parmi les nombreuses fonctionnalités de Keycloak, citons :
 6. Kerberos broker
 7. multitenancy with per-realm customizable skin
 
-####Les Composantes :
+#### Les Composantes :
 Il existe 2 composants principaux de Keycloak :
 1. Serveur Keycloak
 2. Adaptateur d'application Keycloak
 
-####Concepts et termes de base :
+#### Concepts et termes de base :
 Nous devons connaître certains concepts et termes clés avant d'essayer d'utiliser Keycloak pour sécuriser vos applications Web et services REST.
 
 1. users : Les utilisateurs sont des entités capables de se connecter à votre système. Ils peuvent être associés à des attributs tels que l'email, le nom d'utilisateur, l'adresse, le numéro de téléphone et le jour de naissance.
@@ -100,7 +100,7 @@ Cela vous aide à propager les informations d'identité de l'IDP externe à votr
 
 ![alt text](pictures/keycloak/2.png)
 
-###Asterisk: Pour faire forward les apples chez le client, nous utilisions l'Asterisk.
+### Asterisk: Pour faire forward les apples chez le client, nous utilisions l'Asterisk.
 Asterisk est un autocommutateur téléphonique privé (PABX) libre et propriétaire (publié sous double licence GPLv2 ou commerciale6) pour systèmes GNU/Linux. Il permet, entre autres, la messagerie vocale, les files d'attente, les agents d'appels, les musiques d'attente et les mises en garde d'appels, la distribution des appels. Il est possible également d'ajouter l'utilisation des conférences par le biais de l'installation de modules supplémentaires et la recompilation des binaires.
 
 Asterisk implémente les protocoles H.320, H.323 et SIP, ainsi qu'un protocole spécifique nommé IAX (Inter-Asterisk eXchange). 
@@ -111,7 +111,7 @@ Asterisk est conçu en 1999, créé par Mark Spencer (en), alors étudiant de l'
 À la recherche d'un commutateur téléphonique privé pour créer un centre de support technique sur Linux, il est dissuadé par les tarifs trop élevés des solutions existantes,
 et décide de se créer son propre routeur d'appels sous Linux, le PBX Asterisk. Quelque temps après, il fonde la société Digium, fournisseur de cartes FXO et FXS compatibles avec Asterisk. 
 
-####Fonctionnalités :
+#### Fonctionnalités :
 1. Messagerie vocale 
 2. Conférence téléphonique 
 3. Répondeur vocal interactif 
@@ -122,7 +122,7 @@ et décide de se créer son propre routeur d'appels sous Linux, le PBX Asterisk.
 ![alt text](pictures/asterisk/1.png)
 
 
-####VOIP
+#### VOIP
 "VoIP" est un abrégé de l’anglais Voice Over IP parfois appelé (téléphonie) IP ou téléphonie sur Internet. Cette technologie permet de communiquer par voix via le réseau Internet ou autres réseaux supportant le protocole TCP/IP.
 
 La VoIP doit non seulement simplifier la mise en place (installation et configuration) mais aussi faire économiser de l’argent.
@@ -134,7 +134,7 @@ Le transport se faisant aussi par le biais du réseau informatique, il n’est d
 Le tout est alors centralisé sur une même entité. De plus, en positionnant la voix comme une application supplémentaire sur le réseau IP, 
 l’entreprise ne va pas uniquement substituer un transport opérateur RTC à un transport IP, mais simplifié la gestion de la voix, des données et vidéo par ce seul transport.
 
-####SIP
+#### SIP
 
 SIP (Session Initiation Protocol, RFC 3261) est un protocole de signalisation de niveau Application pour la gestion de session audio indépendant du protocole de transport IP (UDP/TCP). 
 Ce protocole avancé permet aux utilisateurs de maintenir, transférer, renvoyer, mettre en attente un appel ou encore de réaliser des conférences
@@ -150,7 +150,7 @@ Ces requêtes sont répertoriées sous divers codes :
 
 ![alt text](pictures/asterisk/2.png)
 
-####Java Spring : Pour faire le management des utilisateurs
+#### Java Spring : Pour faire le management des utilisateurs
 Spring est un framework open source pour construire et définir l'infrastructure d'une application Java3, dont il facilite le développement et les tests.En 2004, Rod Johnson a écrit le livre Expert One-on-One J2EE Design and Development4 qui explique les raisons de la création de Spring.
 
 Spring s’appuie principalement sur l’intégration de trois concepts clés : 
@@ -162,13 +162,13 @@ La couche d’abstraction permet d’intégrer d’autres frameworks et biblioth
 Cela se fait par l’apport ou non de couches d’abstraction spécifiques à des frameworks particuliers.
 Il est ainsi possible d’intégrer un module d’envoi de mails plus facilement.
 
-####Kotlin : Pour developer les applications mobile
+#### Kotlin : Pour developer les applications mobile
 Kotlin est un langage de programmation orienté objet et fonctionnel, avec un typage statique qui permet de compiler pour la machine virtuelle Java, JavaScript, et vers plusieurs plateformes en natif (grâce à LLVM). Son développement provient principalement d'une équipe de programmeurs chez JetBrains basée à Saint-Pétersbourg en Russie (son nom vient de l'île de Kotline, près de St. Pétersbourg).
 Google annonce pendant la conférence Google I/O 2017 que Kotlin devient le second langage de programmation officiellement pris en charge par Android3 après Java. 
 Le 8 mai 2019, toujours lors de la conférence Google I/O, Kotlin devient officiellement le langage de programmation voulu et recommandé par le géant américain Google pour le développement des applications Android4.
 Pivotal Software annonce le 4 janvier 2017 le support officiel de Kotlin sur la cinquième version du Framework Spring 5.Kotlin est un langage de programmation moderne à écriture statique utilisé par plus de 60% des développeurs Android professionnels qui contribue à augmenter la productivité, la satisfaction des développeurs et la sécurité du code.
 
-####RabbitMQ : Pour les microservice communique entre eux d'une manière Async
+#### RabbitMQ : Pour les microservice communique entre eux d'une manière Async
 RabbitMQ est un logiciel d'agent de messages open source qui implémente le protocole Advanced Message Queuing (AMQP),
 mais aussi avec des plugins Streaming Text Oriented Messaging Protocol (STOMP) et Message Queuing Telemetry Transport (MQTT).
 - Le projet est constitué de :
@@ -180,7 +180,7 @@ mais aussi avec des plugins Streaming Text Oriented Messaging Protocol (STOMP) e
     - "Federation" : partage de messages entre les agents (au niveau exchange).
     - "Management" : monitoring et contrôle des agents et de leurs groupes.
 
-####Redis: pour la distributed caching
+#### Redis: pour la distributed caching
 Redis (de l'anglais REmote Dictionary Server qui peut être traduit par « serveur de dictionnaire distant » et jeu de mot avec Redistribute) 
 est un système de gestion de base de données clé-valeur scalable, très hautes performances, 
 écrit en C ANSI et distribué sous licence BSD. Il fait partie de la mouvance NoSQL et vise à fournir les performances les plus élevées possible.
