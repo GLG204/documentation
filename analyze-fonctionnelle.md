@@ -1,4 +1,4 @@
-#Introduction:
+# Introduction:
 Pendant bien des années, le transport de la voix et celui des données se faisait de manière distincte au sein des entreprises.
 Pour le transport de la voix il fallait recourir au réseau téléphonique et pour les données recourir au réseau informatique. 
 Bien entendu cet état de chose n’était pas sans conséquences. En effet, les entreprises étaient confrontées à des problèmes tels :
@@ -6,7 +6,7 @@ les budgets et dépenses en télécoms de plus en plus élevés, la perte de la 
 qui n’a pu être établie (gestion non rationnelle de la bande passante), affectation d’un intervalle de temps (IT)à un canal voie ou données,
 échec de l’intégration des services de transport de données dans les PABX pour ne citer que ceux-là.
 
-#Comment ca marche :
+# Comment ca marche :
 1. l'utilisateur enregistre dans le système et faire le paiement nécessaire.
 2. le système génère une id unique pour l'utilisateur.
 3. l'utilisateur télécharge deux applications mobiles, la première et le voipMobile (forwarder) et le deuxième soft-phone (receiver)
@@ -16,7 +16,7 @@ qui n’a pu être établie (gestion non rationnelle de la bande passante), affe
 Le System est ready...
 
 
-#Les different fonction du backend : 
+# Les different fonction du backend : 
 | fonction   |      objectif      |  sous-fonction |
 |----------|:-------------:|------:|
 | Authentication |  utilisation de mots de passe sur des systèmes à temps partagé, pour l'authentification sécurisée de l'identité des clients du réseau par les serveurs et vice versa, sans présumer l'intégrité du système d'exploitation ni | genere, validee les jeton |
