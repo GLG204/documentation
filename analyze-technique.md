@@ -150,6 +150,72 @@ Ces requêtes sont répertoriées sous divers codes :
 
 ![alt text](pictures/asterisk/2.png)
 
+#### Zuul Proxy
+
+Le nœud du modèle de microservices est de créer un service indépendant qui peut être mis à l'échelle et déployé indépendamment. Ainsi, dans un domaine métier complexe, plus de 50 à 100 microservices sont très courants. Imaginons un système où nous avons cinquante microservices maintenant, nous devons implémenter une interface utilisateur qui est une sorte de tableau de bord, donc elle appelle plusieurs services pour récupérer et afficher les informations importantes dans l'interface utilisateur.
+
+Du point de vue du développeur d'interface utilisateur, pour collecter des informations à partir de cinquante microservices sous-jacents, il doit appeler cinquante API REST, car chaque microservice expose une API REST pour la communication. Le client doit donc connaître les détails de tous les modèles / ports d'API REST et d'URL pour les appeler. Certes, cela ne ressemble pas à un bon design. C'est une sorte de rupture d'encapsulation; l'interface utilisateur doit connaître tous les détails du serveur / port des microservices pour interroger les services.
+
+De plus, pensez aux aspects communs d'un programme Web, comme CORS, l'authentification,
+la sécurité et la surveillance en termes de cette conception 
+chaque équipe de microservice doit développer tous ces aspects dans son propre service, 
+donc le même code a été répliqué sur cinquante microservices. 
+Les modifications des exigences d'authentification ou de la politique CORS se répercuteront sur tous les services.
+Cela va à l'encontre du principe DRY, ce type de conception est donc très sujet aux erreurs et rigide. 
+Pour le rendre robuste, il doit être modifié de telle manière que nous n'ayons qu'un seul point d'entrée où tous
+les aspects communs du code sont écrits et le client communique avec ce service commun. Ici, le concept Zuul (The Gatekeeper / Demigod) apparaît.
+
+![alt text](pictures/zuul/1.jpg)
+
+![alt text](pictures/zuul/2.jpg)
+
+#### Spring Boot Admin
+
+La surveillance de votre application à l'aide de Spring Boot Actuator Endpoint est légèrement difficile.
+Parce que, si vous avez un nombre «n» d’applications, chaque application possède des end-point d’actionneurs distincts,
+ce qui rend la surveillance difficile. Spring Boot Admin Server est une application utilisée pour gérer et surveiller votre application Microservice.
+
+Pour gérer de telles situations, CodeCentric Team fournit une interface utilisateur Spring Boot Admin pour gérer et surveiller 
+tous les points de terminaison de votre application Spring Boot Actuator en un seul endroit.
+
+Donc, Spring Boot Admin est une application Web, utilisée pour gérer et surveiller les applications Spring Boot. Chaque application est considérée comme un client et s'enregistre sur le serveur d'administration.
+Dans les coulisses, la magie est donnée par les end-point Spring Boot Actuator.
+
+![alt text](pictures/spring-boot-admin-admin/1.png)
+
+![alt text](pictures/spring-boot-admin-admin/2.png)
+
+![alt text](pictures/spring-boot-admin-admin/3.png)
+
+![alt text](pictures/spring-boot-admin-admin/4.png)
+
+![alt text](pictures/spring-boot-admin-admin/5.png)
+
+![alt text](pictures/spring-boot-admin-admin/6.png)
+
+![alt text](pictures/spring-boot-admin-admin/7.png)
+
+![alt text](pictures/spring-boot-admin-admin/8.png)
+
+#### Consul
+Consul est un outil gratuit et open source qui fournit la découverte de services, la vérification de l'état, 
+l'équilibrage de charge et un magasin de valeurs-clés distribué à l'échelle mondiale. En outre, 
+il fournit un ensemble de primitives pour la création de flux de travail et d'outils d'orchestration.
+ Dans les architectures de microservices, les applications s'exécutent souvent sur de nombreuses adresses IP et se lient à une variété de ports.
+La découverte de services facilite le processus de recherche de ces différents services, quel que soit leur emplacement.
+
+Étant donné que plusieurs instances du même service s'exécutent souvent simultanément dans une architecture de microservice,
+nous avons besoin d'une stratégie pour équilibrer uniformément le trafic vers toutes 
+les instances saines du service tout en gérant les changements d'intégrité, les changements dans le nombre d'instances et les changements
+dans l'état du cluster. . C'est le travail de la couche d'équilibrage de charge. Cet article traite de quelques stratégies courantes
+pour l'équilibrage de charge avec Consul dans les architectures de microservices
+
+![alt text](pictures/consul/1.png)
+
+![alt text](pictures/consul/2.png)
+
+![alt text](pictures/consul/3.png)
+
 #### Java Spring : Pour faire le management des utilisateurs
 Spring est un framework open source pour construire et définir l'infrastructure d'une application Java3, dont il facilite le développement et les tests.En 2004, Rod Johnson a écrit le livre Expert One-on-One J2EE Design and Development4 qui explique les raisons de la création de Spring.
 
